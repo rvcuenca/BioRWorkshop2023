@@ -4,24 +4,24 @@
 1. Introduction to R and RStudio
     
     1. [Installation of R, Rtools, and RStudio](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part1.html)
-        a. Downloading necessary executable files.
-        b. Installing R.
-        c. Installing RTools.
-        d. Instlling RStudio.
+        1. Downloading necessary executable files.
+        1. Installing R.
+        1. Installing RTools.
+        1. Instlling RStudio.
      
-    2. [Getting Started with RStudio IDE](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part2.html)
-        a.    Dark theme setup (optional)
-        b.    Pane Layouts
-        c.    Navigation via Keyboard Shortcuts
+    1. [Getting Started with RStudio IDE](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part2.html)
+        1.    Dark theme setup (optional)
+        1.    Pane Layouts
+        1.    Navigation via Keyboard Shortcuts
      
-    3. [Installing, Loading and Updating Packages](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part3.html)
-        a.    Installing Packages
-        b.    Loading Packages
-        c.    Updating Packages
+    1. [Installing, Loading and Updating Packages](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part3.html)
+        1.    Installing Packages
+        1.    Loading Packages
+        1.    Updating Packages
   
 
-2. Programming Basics
+1. Programming Basics
 
-3. Data Management
+1. Data Management
 
-4. Data Manipulation
+1. Data Manipulation
