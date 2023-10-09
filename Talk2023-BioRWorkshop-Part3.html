@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -42,7 +76,14 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link active" data-scroll-target="#installing-packages">Installing Packages</a></li>
+  <li><a href="#loading-packages" id="toc-loading-packages" class="nav-link" data-scroll-target="#loading-packages">Loading Packages</a></li>
+  </ul>
+</nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -70,7 +111,44 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-
+<section id="installing-packages" class="level2">
+<h2 class="anchored" data-anchor-id="installing-packages">Installing Packages</h2>
+<p>We now install the necessary package we need for this workshop called <code>tidyverse</code>. There are two ways we can do this:</p>
+<ol type="1">
+<li><p>Go to the console pane, type the following code and hit Enter.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<img src="img/installing-using-updating-packages/03.png" class="img-fluid" style="width:100.0%" alt="Typical output when installing a package."></li>
+<li><p>Alternatively, one go to <code>Tools &gt; Install Packages</code> and type on <code>Packages</code> blank entry the name of the package you want to install, e.g.&nbsp;<code>tidyverse</code>. Once done click “Install”.</p>
+<div id="fig-installpackage" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/installing-using-updating-packages/01.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/installing-using-updating-packages/02.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Installing packages using RStudio’s Tools menu.</figcaption><p></p>
+</figure>
+</div></li>
+</ol>
+</section>
+<section id="loading-packages" class="level2">
+<h2 class="anchored" data-anchor-id="loading-packages">Loading Packages</h2>
+<p>There are two ways to load a package in a current session of R.</p>
+<ol type="1">
+<li><p>Using the Console, type the following command line and hit Enter.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>Using <code>Packages</code> tab in the <code>Output Pane</code>, first search the name of the package (assuming it is already installed) in the mini-search bar. Check the corresponding check box that matches to the package you want to load in the current session of R.</p>
+<p><img src="img/installing-using-updating-packages/05.png" class="img-fluid" style="width:100.0%"></p></li>
+</ol>
+<p>When you installed R for the first time in you system, some packages are already pre-installed along with it. Some of these packages are even pre-loaded when you open RStudio.</p>
+</section>
 
 </main>
 <!-- /main column -->
