@@ -22,3 +22,9 @@
    
 3. [Installing, Loading and Updating Packages](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part3.html)
 
+   a.    Installing Packages
+   
+   b.    Loading Packages
+   
+   c.    Updating Packages
+
