@@ -22,6 +22,7 @@
 
 1. Programming Basics
 
+1. Data Manipulation
+
 1. Data Management
 
-1. Data Manipulation
