@@ -36,6 +36,11 @@
 
 1. Data Management: The Tidy Data Principles
 
-1. Data Manipulation
-
-1. Programming Basics
+1. Data Manipulation: The Tidyverse Ecosystem
+    1. Reading Data
+    1. Cleaning Data
+    1. Exporting Data
+    
+1. Programming Basics: Automating Things
+   1. Conditional Statements
+   1. Looping
