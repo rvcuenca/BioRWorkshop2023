@@ -31,7 +31,6 @@
         1. Factors
         1. Date
         1. Missing Values
-        
     1. Lists
     1. Matrix
     1. Data Frame
