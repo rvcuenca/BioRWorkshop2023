@@ -20,6 +20,9 @@
         1.    Installing Packages
         1.    Loading Packages
         1.    Updating Packages
+        
+    1. Script and Markdown Files
+        1. 
   
 
 1. Objects in R
