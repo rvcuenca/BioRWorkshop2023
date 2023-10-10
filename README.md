@@ -21,8 +21,13 @@
         1.    Loading Packages
         1.    Updating Packages
         
-    1. Script and Markdown Files
-        1. 
+    1. [Script and Markdown Files](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part4.html)
+        1. Scripts
+            1. Opening R Scripts
+            1. Editing Script Files
+        1. Markdown
+            1. Creating Markdown Files
+            1. Rendering Markdown Files
   
 
 1. Objects in R
