@@ -38,17 +38,20 @@
     1. Functions
     
 1. Common Operators in R
+
     1. Algebraic Operations: `+`, `-`, `*`, `/`
     1. Assignment Operator:  `=`, `<-`, `->`,
     1. Sub-setting Operators: `$`, `[`, `[[` 
-    1. Pipe Operator: `%>%`
     1. Boolean Operators: `&`, `|`, `!`, `all()`, `any()`
+    1. Pipe Operator: `%>%`
 
 1. Data Management
     1. Types of Data
     1. The Tidy Data Principles
 
-1. Data Manipulation: The Tidyverse Ecosystem
+1. Data Manipulation
+    1. String Manipulation: A quick overview of regular expressions
+    1. The Tidyverse Ecosystem
     1. Reading Data
     1. Cleaning Data
     1. Exporting Data
