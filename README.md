@@ -20,9 +20,22 @@
         1.    Updating Packages
   
 
-1. Programming Basics
+1. Objects in R
+
+    1. Vectors
+        1. Numbers
+        1. Character Strings
+        1. Factors
+        1. Date
+        1. Missing Values
+        
+    1. Lists
+    1. Matrix
+    1. Data Frame
+    1. Functions
+
+1. Data Management: The Tidy Data Principles
 
 1. Data Manipulation
 
-1. Data Management
-
+1. Programming Basics
