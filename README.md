@@ -1,6 +1,8 @@
 # [BioRWorkshop2023](https://rvcuenca.github.io/BioRWorkshop2023/)
 2023 R Workshop for MSU-IIT Bio Departments
 
+## Day 1
+
 1. Introduction to R and RStudio
     
     1. [Installation of R, Rtools, and RStudio](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part1.html)
