@@ -41,17 +41,17 @@
         1. Missing Values
     1. Matrix
     1. Data Frame
+    1. Lists
     1. Variables and Constants
     1. Functions
-    1. Lists
     
 1. Common Operators in R
 
     1. Algebraic Operations: `+`, `-`, `*`, `/`
-    1. Inequalities: `<`, `>`, `<=`, `>=`, `!=`, `==`
     1. Assignment Operator:  `=`, `<-`, `->`,
     1. Sub-setting Operators: `$`, `[`, `[[` 
     1. Boolean Operators: `&`, `|`, `!`, `all()`, `any()`
+    1. Inequalities: `<`, `>`, `<=`, `>=`, `!=`, `==`
     1. Pipe Operator: `%>%`
 
 1. Data Management
