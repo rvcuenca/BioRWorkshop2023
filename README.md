@@ -30,23 +30,25 @@
             1. Rendering Markdown Files
   
 
-1. Objects in R
+1. [Objects in R](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part5.html)
 
     1. Vectors
-        1. Character Strings
-        1. Numbers
-        1. Boolean
+        1. Characters or Strings
+        1. Numbers: integer, double, complex
+        1. Logical or Boolean
         1. Factors
         1. Date
         1. Missing Values
-    1. Lists
     1. Matrix
     1. Data Frame
+    1. Variables and Constants
     1. Functions
+    1. Lists
     
 1. Common Operators in R
 
     1. Algebraic Operations: `+`, `-`, `*`, `/`
+    1. Inequalities: `<`, `>`, `<=`, `>=`, `!=`, `==`
     1. Assignment Operator:  `=`, `<-`, `->`,
     1. Sub-setting Operators: `$`, `[`, `[[` 
     1. Boolean Operators: `&`, `|`, `!`, `all()`, `any()`
