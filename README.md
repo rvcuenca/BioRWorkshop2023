@@ -47,7 +47,7 @@
         1. Special and Built-in R Constants
     1. Functions
     
-1. Common Operators in R
+1. [Common Operators in R]((https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part6.html))
 
     1. Algebraic Operations: `+`, `-`, `*`, `/`, `^`
     1. Assignment Operator:  `=`, `<-`, `->`,
