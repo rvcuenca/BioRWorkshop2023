@@ -46,10 +46,12 @@
     1. Pipe Operator: `%>%`
 
 1. Data Management
+
     1. Types of Data
     1. The Tidy Data Principles
 
 1. Data Manipulation
+
     1. String Manipulation: A quick overview of regular expressions
     1. The Tidyverse Ecosystem
     1. Reading Data
@@ -57,6 +59,7 @@
     1. Exporting Data
     
 1. Programming Basics: Automating Things
-   1. Conditional Statements
-   1. Looping
-   1. Custom Functions
+
+    1. Conditional Statements
+    1. Looping
+    1. Custom Functions
