@@ -43,11 +43,12 @@
     1. Data Frame
     1. Lists
     1. Variables and Constants
+        1. Special and Built-in R Constants
     1. Functions
     
 1. Common Operators in R
 
-    1. Algebraic Operations: `+`, `-`, `*`, `/`
+    1. Algebraic Operations: `+`, `-`, `*`, `/`, `^`
     1. Assignment Operator:  `=`, `<-`, `->`,
     1. Sub-setting Operators: `$`, `[`, `[[` 
     1. Boolean Operators: `&`, `|`, `!`, `all()`, `any()`
