@@ -49,13 +49,14 @@
         1. Defining a Function
         1. A Note of Advantages of using Functions in R
     
-1. [Common Operators in R]((https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part6.html))
+1. [Common Operators in R](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part6.html)
 
     1. Algebraic Operators: `+`, `-`, `*`, `/`, `^`
-    1. Assignment Operators:  `=`, `<-`, `->`,
-    1. Sub-setting Operators: `$`, `[`, `[[` 
-    1. Boolean Operators: `&`, `|`, `!`, `all()`, `any()`
+    1. Assignment Operators:  `=`, `<-`, `->`, `<<-`, `->>`
+    1. Subsetting Operators: `$`, `[`, `[[` 
     1. Inequalities: `<`, `>`, `<=`, `>=`, `!=`, `==`
+    1. Membership: `%in%`
+    1. Boolean Operators: `&`, `|`, `!`, `all()`, `any()`
     1. Pipe Operator: `%>%`
 
 1. Data Management

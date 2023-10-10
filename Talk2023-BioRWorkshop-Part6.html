@@ -3026,12 +3026,19 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#algebraic-operators" id="toc-algebraic-operators" class="nav-link active" data-scroll-target="#algebraic-operators">Algebraic Operators</a>
   <ul class="collapse">
-  <li><a href="#important-note-on-the-order-of-operations" id="toc-important-note-on-the-order-of-operations" class="nav-link" data-scroll-target="#important-note-on-the-order-of-operations">Important Note on the Order of Operations</a></li>
+  <li><a href="#algebraic-operations-on-other-r-objects" id="toc-algebraic-operations-on-other-r-objects" class="nav-link" data-scroll-target="#algebraic-operations-on-other-r-objects">Algebraic Operations on other R Objects</a></li>
+  <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes">Important Notes</a></li>
   </ul></li>
   <li><a href="#assignment-operators" id="toc-assignment-operators" class="nav-link" data-scroll-target="#assignment-operators">Assignment Operators</a></li>
-  <li><a href="#sub-setting-operators" id="toc-sub-setting-operators" class="nav-link" data-scroll-target="#sub-setting-operators">Sub-setting Operators</a></li>
-  <li><a href="#boolean-operators" id="toc-boolean-operators" class="nav-link" data-scroll-target="#boolean-operators">Boolean Operators</a></li>
+  <li><a href="#subsetting-operators" id="toc-subsetting-operators" class="nav-link" data-scroll-target="#subsetting-operators">Subsetting Operators</a>
+  <ul class="collapse">
+  <li><a href="#subsetting-vectors" id="toc-subsetting-vectors" class="nav-link" data-scroll-target="#subsetting-vectors">Subsetting Vectors</a></li>
+  <li><a href="#subsetting-matrices" id="toc-subsetting-matrices" class="nav-link" data-scroll-target="#subsetting-matrices">Subsetting Matrices</a></li>
+  <li><a href="#subsetting-lists" id="toc-subsetting-lists" class="nav-link" data-scroll-target="#subsetting-lists">Subsetting Lists</a></li>
+  </ul></li>
   <li><a href="#inequalities" id="toc-inequalities" class="nav-link" data-scroll-target="#inequalities">Inequalities</a></li>
+  <li><a href="#membership-operators" id="toc-membership-operators" class="nav-link" data-scroll-target="#membership-operators">Membership Operators</a></li>
+  <li><a href="#boolean-operators" id="toc-boolean-operators" class="nav-link" data-scroll-target="#boolean-operators">Boolean Operators</a></li>
   <li><a href="#pipe-operator" id="toc-pipe-operator" class="nav-link" data-scroll-target="#pipe-operator">Pipe Operator</a></li>
   </ul>
 </nav>
@@ -3106,15 +3113,35 @@ vertical-align: -.125em;
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">^</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ul>
-<section id="important-note-on-the-order-of-operations" class="level3">
-<h3 class="anchored" data-anchor-id="important-note-on-the-order-of-operations">Important Note on the Order of Operations</h3>
+<section id="algebraic-operations-on-other-r-objects" class="level3">
+<h3 class="anchored" data-anchor-id="algebraic-operations-on-other-r-objects">Algebraic Operations on other R Objects</h3>
+<p>One can add vectors of the same length:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="fl">0.5</span>,<span class="dv">9</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="sc">-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="fl">0.5</span>,<span class="dv">9</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="fl">0.5</span>,<span class="dv">9</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="sc">/</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="fl">0.5</span>,<span class="dv">9</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="sc">^</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="fl">0.5</span>,<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>One can still add vectors of the same length but the <em>recycling</em> principle applies:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">/</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">^</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What do you think about arithmetic operations between matrices, lists, and data.frames?</p>
+</section>
+<section id="important-notes" class="level3">
+<h3 class="anchored" data-anchor-id="important-notes">Important Notes</h3>
 <ul>
 <li><p>R follows the PEMDAS priority rule which stands for <strong>P</strong>arenthesis, <strong>E</strong>xponent, <strong>M</strong>ultiplication, <strong>D</strong>ivision, <strong>A</strong>ddition, <strong>S</strong>ubtraction.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">*</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">6</span> <span class="sc">-</span> <span class="dv">3</span> <span class="sc">^</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">*</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">6</span> <span class="sc">-</span> <span class="dv">3</span> <span class="sc">^</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">*</span> { (<span class="dv">5</span> <span class="sc">+</span> <span class="dv">6</span>)  <span class="sc">-</span> (<span class="dv">3</span> <span class="sc">^</span> <span class="dv">3</span>) }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">*</span> { (<span class="dv">5</span> <span class="sc">+</span> <span class="dv">6</span>)  <span class="sc">-</span> (<span class="dv">3</span> <span class="sc">^</span> <span class="dv">3</span>) }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 <li><p>However, it is <strong><em>highly recommended</em></strong> to use grouping symbols namely parentheses and braces <code>(,),{,}</code> when writing mathematical expressions. A basic rule in programming is <em>“if you can give instructions unambiguously, DO SO!”.</em></p></li>
 </ul>
@@ -3122,16 +3149,240 @@ vertical-align: -.125em;
 </section>
 <section id="assignment-operators" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-operators">Assignment Operators</h2>
-<p>We have already encountered assignments from the previous topic on the Variables and Constants section of the [Objects in R](<a href="https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part5.html)" class="uri">https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part5.html)</a>.</p>
+<p>We have already encountered assignments from the previous topic on the Variables and Constants section of the <a href="https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part5.html">Objects in R</a> session. Here elaborate some additional notations.</p>
+<p>There are four notations for assigning values to a given variable name:</p>
+<ol type="1">
+<li><strong>Left-assignment</strong> <code>&lt;-</code> , <code>&lt;&lt;-</code></li>
+<li><strong>Right-assignment <code>-&gt;</code>, <code>-&gt;&gt;</code></strong></li>
+<li><strong>Equal sign <code>=</code></strong></li>
+</ol>
+<p>Using the keyboard shortcut <code>Alt + (minus)</code> or <code>Command + (minus)</code> , one can output the left-assignment operator <code>&lt;-</code> on a code line. The last two assignment operators are written manually.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The double variants <code>&lt;&lt;-</code> and <code>-&gt;&gt;</code> means to assign values and “forcely” save them in the Global Environment. The reason for this is that using non-double assignment operators within close environments, e.g. within the definition of functions, will not save the variables/constants to the global environment. Unless you have a valid reason to do so, please avoid using the double variants as possible</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  the_value_local <span class="ot">&lt;-</span> (x <span class="sc">+</span> y) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  the_value_global <span class="ot">&lt;&lt;-</span> (x <span class="sc">+</span> y) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(the_value_local)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">G</span>(<span class="dv">2</span>,<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The right-assignment operators <code>-&gt;</code> and <code>-&gt;&gt;</code> are use in reverse in a way that <code>a -&gt; x</code> means we assign the value <code>a</code> to the variable name <code>x</code> .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="ot">-&gt;</span> y</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The equal sign <code>=</code> behaves the same way as the left-assignment operator. To avoid confusion, it is sometimes advised to use <code>&lt;-</code> in place of <code>=</code> .</p>
+<p>The left assignment operators can be used twice and are sometimes included in names of functions like the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>V <span class="ot">&lt;-</span> M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>V</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>M</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Row1&quot;</span>,<span class="st">&quot;Row2&quot;</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>M</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The following code performs the previous two-steps code into a single one but does not modify the matrix itself.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">rownames&lt;-</span><span class="st">`</span>(V, <span class="fu">c</span>(<span class="st">&quot;Row1&quot;</span>,<span class="st">&quot;Row2&quot;</span>))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>V</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="sub-setting-operators" class="level2">
-<h2 class="anchored" data-anchor-id="sub-setting-operators">Sub-setting Operators</h2>
+<section id="subsetting-operators" class="level2">
+<h2 class="anchored" data-anchor-id="subsetting-operators">Subsetting Operators</h2>
+<p>R objects that are able to contain data becomes useless if we do not have the capability access its entries. Good thing that R provides such mechanism.</p>
+<section id="subsetting-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="subsetting-vectors">Subsetting Vectors</h3>
+<p>Accessing entries of vectors by indices (or position ids):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">99</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">2</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">3</span>]</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">4</span>]</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)]</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Removing entries negative indices:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="dv">2</span>]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="dv">3</span>]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="dv">4</span>]</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)]</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You cannot access at the same time remove entries in a given vector, i.e. you cannot mix both negative and positive indices.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="dv">3</span>,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="boolean-operators" class="level2">
-<h2 class="anchored" data-anchor-id="boolean-operators">Boolean Operators</h2>
+<section id="subsetting-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="subsetting-matrices">Subsetting Matrices</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>M</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>M[<span class="dv">3</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>M[,<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>M[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>M[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>M[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>M[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">[</span><span class="st">`</span>(M,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="subsetting-lists" class="level3">
+<h3 class="anchored" data-anchor-id="subsetting-lists">Subsetting Lists</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>some_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">v =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">99</span>), </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">M =</span> M, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">the alphabet</span><span class="st">`</span> <span class="ot">=</span> LETTERS)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>some_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(some_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>some_list[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>some_list[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>some_list[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>some_list[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>some_list[[<span class="dv">2</span>]][<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(some_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>some_list<span class="sc">$</span>v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>some_list<span class="sc">$</span>M</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>some_list<span class="sc">$</span><span class="st">`</span><span class="at">the alphabet</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>some_list<span class="sc">$</span>M[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="sc">-</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">[</span><span class="st">`</span>(some_list,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">[[</span><span class="st">`</span>(some_list,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 <section id="inequalities" class="level2">
 <h2 class="anchored" data-anchor-id="inequalities">Inequalities</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">3</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&lt;=</span> <span class="dv">3</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&gt;=</span> <span class="dv">3</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">==</span> <span class="dv">3</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">!=</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&gt;</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="membership-operators" class="level2">
+<h2 class="anchored" data-anchor-id="membership-operators">Membership Operators</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="boolean-operators" class="level2">
+<h2 class="anchored" data-anchor-id="boolean-operators">Boolean Operators</h2>
+<ul>
+<li><p>AND operator</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>T <span class="sc">&amp;</span> T</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>T <span class="sc">&amp;</span> F</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>F <span class="sc">&amp;</span> T</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>F <span class="sc">&amp;</span> F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>T <span class="sc">&amp;</span> <span class="cn">TRUE</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">&amp;</span> T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">&amp;</span> (<span class="dv">3</span> <span class="sc">&gt;</span> <span class="dv">4</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">&amp;</span> (<span class="dv">3</span> <span class="sc">&lt;</span> <span class="dv">4</span>)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">&amp;</span> (<span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">4</span>)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">&amp;</span> (<span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>OR operator</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>T <span class="sc">|</span> T</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>T <span class="sc">|</span> F</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>F <span class="sc">|</span> T</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>F <span class="sc">|</span> F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">|</span> (<span class="dv">3</span> <span class="sc">&gt;</span> <span class="dv">4</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">|</span> (<span class="dv">3</span> <span class="sc">&lt;</span> <span class="dv">4</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span>) <span class="sc">|</span> (<span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">4</span>)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span>) <span class="sc">|</span> (<span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>NEGATION operator</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>T</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>F</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">TRUE</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">3</span>) </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">4</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span>) </span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>Multi-AND operator</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">4</span>) <span class="sc">&amp;</span> (<span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span>) <span class="sc">&amp;</span> (<span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all</span>( <span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">4</span> , <span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span> , <span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>Multi-OR operator</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">4</span>) <span class="sc">|</span> (<span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span>) <span class="sc">|</span> (<span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>( <span class="dv">3</span> <span class="sc">&lt;=</span> <span class="dv">4</span> , <span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span> , <span class="dv">3</span> <span class="sc">==</span> <span class="dv">4</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ul>
 </section>
 <section id="pipe-operator" class="level2">
 <h2 class="anchored" data-anchor-id="pipe-operator">Pipe Operator</h2>
