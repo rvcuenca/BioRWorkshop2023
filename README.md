@@ -32,6 +32,7 @@
 
 1. [Objects in R](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part5.html)
 
+    1. An Intuitive Mental Picture
     1. Vectors
         1. Characters or Strings
         1. Numbers: integer, double, complex
