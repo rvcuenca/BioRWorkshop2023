@@ -44,7 +44,9 @@
     1. Pipe Operator: `%>%`
     1. Boolean Operators: `&`, `|`, `!`, `all()`, `any()`
 
-1. Data Management: The Tidy Data Principles
+1. Data Management
+    1. Types of Data
+    1. The Tidy Data Principles
 
 1. Data Manipulation: The Tidyverse Ecosystem
     1. Reading Data
@@ -54,3 +56,4 @@
 1. Programming Basics: Automating Things
    1. Conditional Statements
    1. Looping
+   1. Custom Functions
