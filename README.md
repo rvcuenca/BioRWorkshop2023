@@ -1,6 +1,10 @@
 # [BioRWorkshop2023](https://rvcuenca.github.io/BioRWorkshop2023/)
 2023 R Workshop for MSU-IIT Bio Departments
 
+[CLICK HERE TO ACCESS THE MATERIALS](https://bit.ly/BioRW2023)
+
+or this link: [https://bit.ly/BioRW2023](https://bit.ly/BioRW2023)
+
 ## Day 1
 
 1. Introduction to R and RStudio
@@ -9,7 +13,7 @@
         1. Downloading necessary executable files.
         1. Installing R.
         1. Installing RTools.
-        1. Instlling RStudio.
+        1. Installing RStudio.
      
     1. [Getting Started with RStudio IDE](https://rvcuenca.github.io/BioRWorkshop2023/Talk2023-BioRWorkshop-Part2.html)
         1.    Dark theme setup (optional)

@@ -3388,6 +3388,44 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="pipe-operator">Pipe Operator</h2>
 <p>On of the powerful operators in R via packages <code>magrittr</code> or <code>dplyr</code> of <code>tidyverse</code> is the pipe operator <code>%&gt;%</code> which is quite useful in data manipulation.</p>
 <p>The basic idea is to literally pipe the input-output of a, possibly long, chained process.</p>
+<p>Suppose we want to evaluate the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>( <span class="fu">mean</span>( <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) ) <span class="sc">+</span> <span class="dv">3</span> ) <span class="sc">/</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The steps to compute the final value are:</p>
+<ol type="1">
+<li>Create the vector of data <code>c(1,2,3).</code></li>
+<li>Computer the mean (i.e. average) of the vector <strong><em>from Step 1.</em></strong></li>
+<li>Add to <code>3</code> the value computed <strong><em>from Step 2.</em></strong></li>
+<li>Divide by <code>2</code> <strong><em>from Step 3.</em></strong></li>
+<li>Output the value <strong><em>from Step 4.</em></strong></li>
+</ol>
+<p>Alternatively, we can save the values resulting to each steps above</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> y <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4</span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> z <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>w</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or, preferably, we can use the pipe operator <code>%&gt;%</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">%&gt;%</span>   <span class="co"># Step 1</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  mean <span class="sc">%&gt;%</span>     <span class="co"># Step 2</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;+&quot;</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span>   <span class="co"># Step 3</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;/&quot;</span>(<span class="dv">2</span>) <span class="ot">-&gt;</span> w  <span class="co"># Step 4</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>w              <span class="co"># Step 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 
 </main>
