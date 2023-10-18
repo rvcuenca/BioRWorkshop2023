@@ -81,3 +81,6 @@ or this link: [https://bit.ly/BioRW2023](https://bit.ly/BioRW2023)
     1. Conditional Statements
     1. Looping
     1. Custom Functions
+
+
+## Day 2
